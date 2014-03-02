@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<root>
+    <replacementdef>
+      <replacementname>VI_I</replacementname>
+      <replacementvalue>KeyCode::I</replacementvalue>
+    </replacementdef>
+	<item>
+		<name>Ben's settings</name>
+        <item>
+          <name>What's Mouse Keys Mode?</name>
+		  <identifier vk_config="true">notsave.ben_mousekeys_mode</identifier>
+          <autogen>__ShowStatusMessage__ Mouse Keys</autogen>
+          <!-- scroll wheel mode -->
+          <autogen>__KeyToKey__ {{VI_J}},               ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_LEFT,  ModifierFlag::FN</autogen>
+          <autogen>__KeyToKey__ {{VI_K}},               ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_DOWN,  ModifierFlag::FN</autogen>
+          <autogen>__KeyToKey__ {{VI_I}},             ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_UP,    ModifierFlag::FN</autogen>
+          <autogen>__KeyToKey__ {{VI_L}},               ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_RIGHT, ModifierFlag::FN</autogen>
+          <autogen>__KeyToKey__ KeyCode::CURSOR_UP,    ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_UP,    ModifierFlag::FN</autogen>
+          <autogen>__KeyToKey__ KeyCode::CURSOR_DOWN,  ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_DOWN,  ModifierFlag::FN</autogen>
+          <autogen>__KeyToKey__ KeyCode::CURSOR_LEFT,  ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_LEFT,  ModifierFlag::FN</autogen>
+          <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_RIGHT, ModifierFlag::FN</autogen>
+          <!-- normal mode -->
+          <autogen>__KeyToKey__ {{VI_J}},    KeyCode::VK_MOUSEKEY_LEFT</autogen>
+          <autogen>__KeyToKey__ {{VI_K}},    KeyCode::VK_MOUSEKEY_DOWN</autogen>
+          <autogen>__KeyToKey__ {{VI_I}},  KeyCode::VK_MOUSEKEY_UP</autogen>
+          <autogen>__KeyToKey__ {{VI_L}},    KeyCode::VK_MOUSEKEY_RIGHT</autogen>
+          <autogen>__KeyToKey__ KeyCode::CURSOR_UP,    KeyCode::VK_MOUSEKEY_UP</autogen>
+          <autogen>__KeyToKey__ KeyCode::CURSOR_DOWN,  KeyCode::VK_MOUSEKEY_DOWN</autogen>
+          <autogen>__KeyToKey__ KeyCode::CURSOR_LEFT,  KeyCode::VK_MOUSEKEY_LEFT</autogen>
+          <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::VK_MOUSEKEY_RIGHT</autogen>
+          <!-- ======================================== -->
+          <block>
+            <autogen>__KeyToKey__ KeyCode::D, KeyCode::FN</autogen>
+            <autogen>__KeyToKey__ KeyCode::S, KeyCode::VK_MOUSEKEY_HIGHSPEED</autogen>
+          </block>
+          <!-- ======================================== -->
+          <block>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_L, PointingButton::LEFT</autogen>
+          </block>
+          <block>
+            <autogen>__KeyToKey__ KeyCode::SPACE, PointingButton::MIDDLE</autogen>
+          </block>
+          <block>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, PointingButton::RIGHT</autogen>
+          </block>
+        </item>
+        <item>
+          <name>Simultaneous Key Presses [D+S] to turn on Mouse Keys Mode</name>
+          <appendix>// Strict Simultaneous Key Order. You need to press D key before S key.</appendix>
+          <appendix></appendix>
+          <appendix>+ F turns on "Scroll Wheel Mode"</appendix>
+          <appendix>// F+HJKL to scroll wheel</appendix>
+          <appendix></appendix>
+          <appendix>+ A turns on "High Speed Mode"</appendix>
+          <appendix>// A+HJKL to high-speed movement</appendix>
+          <identifier>remap.simultaneouskeypresses_ben_mouse_keys_mode_ds_strict_key_order</identifier>
+          <autogen>
+            __SimultaneousKeyPresses__
+            KeyCode::A, KeyCode::CONTROL_L,
+            KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_ben_mousekeys_mode,
+            Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER
+          </autogen>
+        </item>
+        <item>
+          <name>[Option] Change left command key to left click in Mouse Keys Mode</name>
+          <identifier>option.ben_mousekeys_mode_commandL2leftclick</identifier>
+        </item>
+        <item>
+          <name>[Option] Change space key to middle click in Mouse Keys Mode</name>
+          <identifier>option.ben_mousekeys_mode_space2middleclick</identifier>
+        </item>
+        <item>
+          <name>[Option] Change right command key to right click in Mouse Keys Mode</name>
+          <identifier>option.ben_mousekeys_mode_commandR2rightclick</identifier>
+        </item>
+      </item>
+</root>
