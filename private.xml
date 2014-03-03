@@ -56,7 +56,7 @@
           <identifier>remap.simultaneouskeypresses_ben_mouse_keys_mode_ds_strict_key_order</identifier>
           <autogen>
             __SimultaneousKeyPresses__
-            KeyCode::A, KeyCode::CONTROL_L,
+            KeyCode::A, KeyCode::CONTROL_R,
             KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_ben_mousekeys_mode,
             Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER
           </autogen>
