@@ -8,6 +8,16 @@
 	<item>
 		<name>Ben's settings</name>
 		<item>
+			<name>Alfred's Google Control Compatibility</name>
+			<identifier>ben.alfred.compatibility</identifier>
+			<appendix>MUSIC_PREV to Cmd_L+Opt_L+Ctrl_L+F7</appendix>
+			<appendix>MUSIC_PLAY to Cmd_L+Opt_L+Ctrl_L+F8</appendix>
+			<appendix>MUSIC_NEXT to Cmd_L+Opt_L+Ctrl_L+F9</appendix>
+			<autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PREV, KeyCode::F7, ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L || ModifierFlag::COMMAND_L</autogen>
+			<autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PLAY, KeyCode::F8, ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L || ModifierFlag::COMMAND_L</autogen>
+			<autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_NEXT, KeyCode::F9, ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L || ModifierFlag::COMMAND_L</autogen>
+		</item>
+		<item>
 			<name>WASD Keyboard</name>
 			<item>
 				<name>Better END and HOME support</name>
@@ -20,7 +30,7 @@
 			
 			<item>
 				<name>Alfred's Google Control Compatibility</name>
-				<identifier>ben.alfred.compatibility</identifier>
+				<identifier>ben.wasd.alfred.compatibility</identifier>
 				<appendix>MUSIC_PREV to Cmd_L+Opt_L+Ctrl_L+F7</appendix>
 				<appendix>MUSIC_PLAY to Cmd_L+Opt_L+Ctrl_L+F8</appendix>
 				<appendix>MUSIC_NEXT to Cmd_L+Opt_L+Ctrl_L+F9</appendix>

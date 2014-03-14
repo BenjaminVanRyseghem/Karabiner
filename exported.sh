@@ -22,6 +22,10 @@ $cli set repeat.wait 10
 /bin/echo -n .
 $cli set remap.simultaneouskeypresses_ben_mouse_keys_mode_ds_strict_key_order 1
 /bin/echo -n .
+$cli set ben.wasd.alfred.compatibility 1
+/bin/echo -n .
+$cli set ben.remap.music 1
+/bin/echo -n .
 $cli set option.extra_cursor_controlR_jkil_hsemicolon 1
 /bin/echo -n .
 /bin/echo
