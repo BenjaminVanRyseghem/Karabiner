@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <root>
+	<appdef>
+		<appname>VIRTUALBOX</appname>
+		<equal>org.virtualbox.app.VirtualBoxVM</equal>
+	</appdef>
 	<replacementdef>
 		<replacementname>VI_I</replacementname>
 		<replacementvalue>KeyCode::I</replacementvalue>
@@ -18,12 +22,29 @@
 			<autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_NEXT, KeyCode::F9, ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L || ModifierFlag::COMMAND_L</autogen>
 		</item>
 		<item>
+			<name>Windows</name>
+			<item>
+				<name>Switch CTRL and CMD</name>
+				<identifier>ben.windows.modifier</identifier>
+				<only>VIRTUALBOX</only>
+				<autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
+			</item>
+			<item>
+				<name>Set Windows on right CTRL</name>
+				<identifier>ben.windows.super</identifier>
+				<only>VIRTUALBOX</only>
+				<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_R</autogen>
+			</item>
+		</item>
+		<item>
 			<name>WASD Keyboard</name>
 			<item>
 				<name>Better END and HOME support</name>
 				<appendix>END to Ctrl_L+E</appendix>
 				<appendix>HOME to Ctrl_L+A</appendix>
 				<identifier>ben.alfred.begin.end</identifier>
+				<not>VIRTUALBOX</not>
 				<autogen>__KeyToKey__ KeyCode::END, KeyCode::E, ModifierFlag::CONTROL_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::HOME, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
 			</item>
