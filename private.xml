@@ -41,6 +41,7 @@
 			<autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::CONTROL_L, KeyCode::BACKQUOTE</autogen>
 			<autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::FN</autogen>
 			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::ESCAPE</autogen>
+			<autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::CAPSLOCK</autogen>
 		</item>
 		<item>
 			<name>Maltron's macros</name>
