@@ -8,9 +8,57 @@
 		<replacementname>VI_I</replacementname>
 		<replacementvalue>KeyCode::I</replacementvalue>
 	</replacementdef>
+	<devicevendordef>
+		<vendorname>MALTRON</vendorname>
+		<vendorid>0x04d8</vendorid>
+	</devicevendordef>
+
+	<deviceproductdef>
+		<productname>MALTRON_KEYBOARD</productname>
+		<productid>0x0055</productid>
+	</deviceproductdef>
 	
 	<item>
 		<name>Ben's settings</name>
+		<item>
+			<name>Capslock fine tunning</name>
+			<device_not>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_not>
+			<appendix>Maps capslock to ctrl_r except on Maltron</appendix>
+			<identifier>ben.capslock</identifier>
+			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::CONTROL_R</autogen>
+		</item>
+		<item>
+			<name>Maltron</name>
+			<identifier>ben.maltron</identifier>
+			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
+			<appendix>Switch keys on Maltron keyboard only</appendix>
+			<autogen>__KeyToKey__ KeyCode::DANISH_DOLLAR, KeyCode::BACKSLASH</autogen>
+			<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
+			<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::OPTION_R</autogen>
+			<autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::CONTROL_R</autogen>
+			<autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::CONTROL_L, KeyCode::BACKQUOTE</autogen>
+			<autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::FN</autogen>
+			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::ESCAPE</autogen>
+		</item>
+		<item>
+			<name>Maltron's macros</name>
+			<identifier>ben.maltron.macros</identifier>
+			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
+			<appendix>Macros for the Maltron keyboard</appendix>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_1, KeyCode::K, ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_2, KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_3, KeyCode::L, ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_4, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_5, KeyCode::F, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_6, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_7, KeyCode::I, ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_8, KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_9, KeyCode::O, ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_0, KeyCode::P, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_DOT, KeyCode::C, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
+		</item>
 		<item>
 			<name>Alfred's Google Control Compatibility</name>
 			<identifier>ben.alfred.compatibility</identifier>
@@ -30,11 +78,15 @@
 				<autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
 			</item>
+		</item>
+		<item>
+			<name>Colemak</name>
 			<item>
-				<name>Set Windows on right CTRL</name>
-				<identifier>ben.windows.super</identifier>
-				<only>VIRTUALBOX</only>
-				<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_R</autogen>
+				<name>LIU loop</name>
+				<identifier>ben.colemak.liu</identifier>
+				<autogen>__KeyToKey__ KeyCode::L, KeyCode::I</autogen>
+				<autogen>__KeyToKey__ KeyCode::I, KeyCode::U</autogen>
+				<autogen>__KeyToKey__ KeyCode::U, KeyCode::L</autogen>
 			</item>
 		</item>
 		<item>
