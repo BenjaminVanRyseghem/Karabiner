@@ -32,16 +32,24 @@
 			<identifier>ben.maltron</identifier>
 			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 			<appendix>Switch keys on Maltron keyboard only</appendix>
-			<autogen>__KeyToKey__ KeyCode::DANISH_DOLLAR, KeyCode::BACKSLASH</autogen>
-			<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::DANISH_DOLLAR, KeyCode::CONTROL_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::BACKSLASH</autogen>
 			<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+
 			<autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
 			<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::OPTION_R</autogen>
-			<autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::CONTROL_R</autogen>
-			<autogen>__KeyToKey__ KeyCode::CONTROL_R, ModifierFlag::CONTROL_L, KeyCode::BACKQUOTE</autogen>
+			<autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::BACKQUOTE</autogen>
+
 			<autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::FN</autogen>
-			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::ESCAPE</autogen>
 			<autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::CAPSLOCK</autogen>
+			<autogen>__KeyToKey__ KeyCode::PAGEUP, KeyCode::CURSOR_LEFT</autogen>
+			<autogen>__KeyToKey__ KeyCode::PAGEDOWN, KeyCode::CURSOR_RIGHT</autogen>
+			<autogen>__KeyToKey__ KeyCode::CURSOR_LEFT, KeyCode::PAGEUP</autogen>
+			<autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::PAGEDOWN</autogen>
+			<autogen>__KeyToKey__ KeyCode::HELP, KeyCode::SLASH, ModifierFlag::COMMAND_L || ModifierFlag::SHIFT_L</autogen>
+
+			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::ESCAPE</autogen>
 		</item>
 		<item>
 			<name>Maltron's macros</name>
