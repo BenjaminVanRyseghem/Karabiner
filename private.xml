@@ -4,6 +4,10 @@
 		<appname>VIRTUALBOX</appname>
 		<equal>org.virtualbox.app.VirtualBoxVM</equal>
 	</appdef>
+	<appdef>
+		<appname>RDC</appname>
+		<equal>com.microsoft.rdc.mac</equal>
+	</appdef>
 	<replacementdef>
 		<replacementname>VI_I</replacementname>
 		<replacementvalue>KeyCode::I</replacementvalue>
@@ -32,10 +36,8 @@
 			<identifier>ben.maltron</identifier>
 			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 			<appendix>Switch keys on Maltron keyboard only</appendix>
-			<autogen>__KeyToKey__ KeyCode::DANISH_DOLLAR, KeyCode::CONTROL_L</autogen>
 			<autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::BACKSLASH</autogen>
 			<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
 
 			<autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
 			<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::OPTION_R</autogen>
@@ -50,6 +52,22 @@
 			<autogen>__KeyToKey__ KeyCode::HELP, KeyCode::SLASH, ModifierFlag::COMMAND_L || ModifierFlag::SHIFT_L</autogen>
 
 			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::ESCAPE</autogen>
+		</item>
+		<item>
+			<name>Maltron not Windows</name>
+			<identifier>ben.maltron.not.windows.modifier</identifier>
+			<not>VIRTUALBOX, RDC</not>
+			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
+			<autogen>__KeyToKey__ KeyCode::DANISH_DOLLAR, KeyCode::CONTROL_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+		</item>
+		<item>
+			<name>Maltron Windows</name>
+			<identifier>ben.maltron.windows.modifier</identifier>
+			<only>VIRTUALBOX, RDC</only>
+			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
+			<autogen>__KeyToKey__ KeyCode::DANISH_DOLLAR, KeyCode::COMMAND_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::CONTROL_L</autogen>
 		</item>
 		<item>
 			<name>Maltron's macros</name>
@@ -67,6 +85,7 @@
 			<autogen>__KeyToKey__ KeyCode::KEYPAD_9, KeyCode::O, ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
 			<autogen>__KeyToKey__ KeyCode::KEYPAD_0, KeyCode::P, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
 			<autogen>__KeyToKey__ KeyCode::KEYPAD_DOT, KeyCode::C, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::ENTER, KeyCode::N, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
 		</item>
 		<item>
 			<name>Alfred's Google Control Compatibility</name>
@@ -84,6 +103,7 @@
 				<name>Switch CTRL and CMD</name>
 				<identifier>ben.windows.modifier</identifier>
 				<only>VIRTUALBOX</only>
+				<device_not>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_not>
 				<autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
 			</item>
@@ -102,8 +122,8 @@
 			<name>WASD Keyboard</name>
 			<item>
 				<name>Better END and HOME support</name>
-				<appendix>END to Ctrl_L+E</appendix>
-				<appendix>HOME to Ctrl_L+A</appendix>
+				<!-- <appendix>END to Ctrl_L+E</appendix>
+				<appendix>HOME to Ctrl_L+A</appendix> -->
 				<identifier>ben.alfred.begin.end</identifier>
 				<not>VIRTUALBOX</not>
 				<autogen>__KeyToKey__ KeyCode::END, KeyCode::E, ModifierFlag::CONTROL_L</autogen>
