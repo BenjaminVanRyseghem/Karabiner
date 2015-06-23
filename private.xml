@@ -37,6 +37,7 @@
 			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 			<appendix>Switch keys on Maltron keyboard only</appendix>
 			<autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::BACKSLASH</autogen>
+			<autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::CONTROL_L</autogen>
 			<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
 
 			<autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
@@ -49,6 +50,7 @@
 			<autogen>__KeyToKey__ KeyCode::PAGEDOWN, KeyCode::CURSOR_RIGHT</autogen>
 			<autogen>__KeyToKey__ KeyCode::CURSOR_LEFT, KeyCode::PAGEUP</autogen>
 			<autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::PAGEDOWN</autogen>
+			
 			<autogen>__KeyToKey__ KeyCode::HELP, KeyCode::SLASH, ModifierFlag::COMMAND_L || ModifierFlag::SHIFT_L</autogen>
 
 			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::ESCAPE</autogen>
@@ -58,7 +60,6 @@
 			<identifier>ben.maltron.not.windows.modifier</identifier>
 			<not>VIRTUALBOX, RDC</not>
 			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
-			<autogen>__KeyToKey__ KeyCode::DANISH_DOLLAR, KeyCode::CONTROL_L</autogen>
 			<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
 		</item>
 		<item>
