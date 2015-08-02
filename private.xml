@@ -21,7 +21,10 @@
 		<productname>MALTRON_KEYBOARD</productname>
 		<productid>0x0055</productid>
 	</deviceproductdef>
-	
+	<inputsourcedef>
+	    <name>US_LAYOUT</name>
+	    <inputsourceid_prefix>com.apple.keylayout.US</inputsourceid_prefix>
+	  </inputsourcedef>
 	<item>
 		<name>Ben's settings</name>
 		<item>
@@ -112,8 +115,61 @@
 		<item>
 			<name>Colemak</name>
 			<item>
-				<name>LIU loop</name>
-				<identifier>ben.colemak.liu</identifier>
+				<name>Tarmak 1 - E>K>N</name>
+				<identifier>ben.colemak.tarmak1</identifier>
+				<inputsource_only>US_LAYOUT</inputsource_only>
+				<autogen>__KeyToKey__ KeyCode::K, KeyCode::E</autogen>
+				<autogen>__KeyToKey__ KeyCode::N, KeyCode::K</autogen>
+				<autogen>__KeyToKey__ KeyCode::J, KeyCode::N</autogen>
+			</item>
+			<item>
+				<name>Tarmak 1 - J</name>
+				<identifier>ben.colemak.tarmak1j</identifier>
+				<inputsource_only>US_LAYOUT</inputsource_only>
+				<autogen>__KeyToKey__ KeyCode::E, KeyCode::J</autogen>
+			</item>
+			<item>
+				<name>Tarmak 2 - G>T>F</name>
+				<identifier>ben.colemak.tarmak2</identifier>
+				<inputsource_only>US_LAYOUT</inputsource_only>
+				<autogen>__KeyToKey__ KeyCode::T, KeyCode::G</autogen>
+				<autogen>__KeyToKey__ KeyCode::F, KeyCode::T</autogen>
+				<autogen>__KeyToKey__ KeyCode::E, KeyCode::F</autogen>
+			</item>
+			<item>
+				<name>Tarmak 2 - J</name>
+				<identifier>ben.colemak.tarmak2j</identifier>
+				<inputsource_only>US_LAYOUT</inputsource_only>
+				<autogen>__KeyToKey__ KeyCode::G, KeyCode::J</autogen>
+			</item>
+			<item>
+				<name>Tarmak 3 - R>S>D</name>
+				<identifier>ben.colemak.tarmak3</identifier>
+				<inputsource_only>US_LAYOUT</inputsource_only>
+				<autogen>__KeyToKey__ KeyCode::S, KeyCode::R</autogen>
+				<autogen>__KeyToKey__ KeyCode::D, KeyCode::S</autogen>
+				<autogen>__KeyToKey__ KeyCode::G, KeyCode::D</autogen>
+			</item>
+			<item>
+				<name>Tarmak 3 - J</name>
+				<identifier>ben.colemak.tarmak3j</identifier>
+				<inputsource_only>US_LAYOUT</inputsource_only>
+				<autogen>__KeyToKey__ KeyCode::R, KeyCode::J</autogen>
+			</item>
+			<item>
+				<name>Tarmak 4 - J>Y>O>;>P</name>
+				<identifier>ben.colemak.tarmak4</identifier>
+				<inputsource_only>US_LAYOUT</inputsource_only>
+				<autogen>__KeyToKey__ KeyCode::Y, KeyCode::J</autogen>
+				<autogen>__KeyToKey__ KeyCode::O, KeyCode::Y</autogen>
+				<autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::O</autogen>
+				<autogen>__KeyToKey__ KeyCode::P, KeyCode::SEMICOLON</autogen>
+				<autogen>__KeyToKey__ KeyCode::R, KeyCode::P</autogen>
+			</item>
+			<item>
+				<name>Tarmak 5 - LUI loop</name>
+				<identifier>ben.colemak.tarmak5</identifier>
+				<inputsource_only>US_LAYOUT</inputsource_only>
 				<autogen>__KeyToKey__ KeyCode::L, KeyCode::I</autogen>
 				<autogen>__KeyToKey__ KeyCode::I, KeyCode::U</autogen>
 				<autogen>__KeyToKey__ KeyCode::U, KeyCode::L</autogen>

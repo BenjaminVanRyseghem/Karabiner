@@ -4,15 +4,19 @@ cli=/Applications/Karabiner.app/Contents/Library/bin/karabiner
 
 $cli set ben.insert2play 1
 /bin/echo -n .
+$cli set ben.colemak.liu 1
+/bin/echo -n .
 $cli set ben.windows.modifier 1
 /bin/echo -n .
-$cli set ben.wasd.alfred.compatibility 1
+$cli set repeat.wait 10
 /bin/echo -n .
 $cli set remap.simultaneouskeypresses_ben_ben_mouse_keys_mode_ds_strict_key_order 1
 /bin/echo -n .
 $cli set ben.maltron 1
 /bin/echo -n .
-$cli set repeat.wait 10
+$cli set ben.wasd.alfred.compatibility 1
+/bin/echo -n .
+$cli set ben.colemak.tarmak5 1
 /bin/echo -n .
 $cli set remap.simultaneouskeypresses_ben_mouse_keys_mode_ds_strict_key_order 1
 /bin/echo -n .
@@ -25,8 +29,6 @@ $cli set ben.remap.music 1
 $cli set ben.windows.tabs 1
 /bin/echo -n .
 $cli set ben_move_mouse 1
-/bin/echo -n .
-$cli set ben.alfred.begin.end 1
 /bin/echo -n .
 $cli set ben.maltron.windows.modifier 1
 /bin/echo -n .
