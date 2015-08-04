@@ -22,28 +22,44 @@
 		<productid>0x0055</productid>
 	</deviceproductdef>
 	<inputsourcedef>
-	    <name>US_LAYOUT</name>
-	    <inputsourceid_prefix>com.apple.keylayout.US</inputsourceid_prefix>
-	  </inputsourcedef>
+		<name>US_LAYOUT</name>
+			<inputsourceid_prefix>com.apple.keylayout.US</inputsourceid_prefix>
+		</inputsourcedef>
 	<item>
 		<name>Ben's settings</name>
+		<item>
+			<name>M570 button configuration</name>
+			<item>
+				<name>Setup</name>
+				<identifier>ben.m570.setup</identifier>
+				<autogen>__KeyToKey__ KeyCode::KEYPAD_MINUS, KeyCode::F16</autogen>
+				<autogen>__KeyToKey__ KeyCode::KEYPAD_PLUS,  KeyCode::F17</autogen>
+			</item>
+			<item>
+				<name>Back and Forward buttons</name>
+				<identifier>ben.m570.buttons</identifier>
+				<autogen>__KeyToKey__ KeyCode::F16, KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::F17, KeyCode::BRACKET_LEFT,  ModifierFlag::COMMAND_L</autogen>
+			</item>
+		</item>
+
 		<item>
 			<name>Capslock fine tunning</name>
 			<device_not>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_not>
 			<appendix>Maps capslock to ctrl_r except on Maltron</appendix>
 			<identifier>ben.capslock</identifier>
-			
+
 			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::CONTROL_R</autogen>
 		</item>
 		<item>
 			<name>Maltron</name>
 			<appendix>Switch keys on Maltron keyboard only</appendix>
-			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 			<item>
 				<name>Fix Layout</name>
 				<appendix>Switch keys on Maltron keyboard only</appendix>
+				<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 				<identifier>ben.maltron</identifier>
-				
+
 				<autogen>__KeyToKey__ KeyCode::CONTROL_L,      KeyCode::BACKSLASH</autogen>
 				<autogen>__KeyToKey__ KeyCode::COMMAND_L,      KeyCode::OPTION_L</autogen>
 
@@ -58,21 +74,22 @@
 				<autogen>__KeyToKey__ KeyCode::CURSOR_LEFT,    KeyCode::PAGEDOWN</autogen>
 				<autogen>__KeyToKey__ KeyCode::END,            KeyCode::PAGEUP</autogen>
 				<!-- <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT,   KeyCode::END</autogen> -->
-				
+
 				<autogen>__KeyToKey__ KeyCode::HELP,           KeyCode::SLASH, ModifierFlag::COMMAND_L || ModifierFlag::SHIFT_L</autogen>
 
 				<autogen>__KeyToKey__ KeyCode::F19,            KeyCode::ESCAPE</autogen>
 			</item>
 			<item>
 				<name>Better END and HOME support</name>
-				<identifier>ben.maltron.home.end</identifier>
 				<appendix>END to Ctrl_L+E</appendix>
 				<appendix>HOME to Ctrl_L+A</appendix>
+				<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
+				<identifier>ben.maltron.home.end</identifier>
 				<not>VIRTUALBOX</not>
-				
+
 				<autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT,  KeyCode::E, ModifierFlag::CONTROL_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::HOME,          KeyCode::A, ModifierFlag::CONTROL_L</autogen>
-				
+
 			</item>
 		</item>
 		<item>
@@ -80,7 +97,7 @@
 			<identifier>ben.maltron.not.windows.modifier</identifier>
 			<not>VIRTUALBOX, RDC</not>
 			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
-			
+
 			<autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::CONTROL_L</autogen>
 			<autogen>__KeyToKey__ KeyCode::OPTION_L,  KeyCode::COMMAND_L</autogen>
 		</item>
@@ -205,7 +222,7 @@
 				<autogen>__KeyToKey__ KeyCode::END,  KeyCode::E, ModifierFlag::CONTROL_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::HOME, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
 			</item>
-			
+
 			<item>
 				<name>Alfred's Google Control Compatibility</name>
 				<identifier>ben.wasd.alfred.compatibility</identifier>

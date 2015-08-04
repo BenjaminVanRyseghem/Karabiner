@@ -22,6 +22,8 @@ $cli set remap.simultaneouskeypresses_ben_mouse_keys_mode_ds_strict_key_order 1
 /bin/echo -n .
 $cli set option.extra_cursor_controlR_jkil_hsemicolon 1
 /bin/echo -n .
+$cli set ben.m570.buttons 1
+/bin/echo -n .
 $cli set private.swap_KeyCode::PC_APPLICATION_ModifierFlag::FN 1
 /bin/echo -n .
 $cli set ben.remap.music 1
