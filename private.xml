@@ -32,38 +32,57 @@
 			<device_not>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_not>
 			<appendix>Maps capslock to ctrl_r except on Maltron</appendix>
 			<identifier>ben.capslock</identifier>
+			
 			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::CONTROL_R</autogen>
 		</item>
 		<item>
 			<name>Maltron</name>
-			<identifier>ben.maltron</identifier>
-			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 			<appendix>Switch keys on Maltron keyboard only</appendix>
-			<autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::BACKSLASH</autogen>
-			<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
+			<item>
+				<name>Fix Layout</name>
+				<appendix>Switch keys on Maltron keyboard only</appendix>
+				<identifier>ben.maltron</identifier>
+				
+				<autogen>__KeyToKey__ KeyCode::CONTROL_L,      KeyCode::BACKSLASH</autogen>
+				<autogen>__KeyToKey__ KeyCode::COMMAND_L,      KeyCode::OPTION_L</autogen>
 
-			<autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
-			<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::OPTION_R</autogen>
-			<autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::BACKQUOTE</autogen>
+				<autogen>__KeyToKey__ KeyCode::OPTION_R,       KeyCode::COMMAND_R</autogen>
+				<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::OPTION_R</autogen>
+				<autogen>__KeyToKey__ KeyCode::COMMAND_R,      KeyCode::BACKQUOTE</autogen>
 
-			<autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::FN</autogen>
-			<autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::CAPSLOCK</autogen>
-			<autogen>__KeyToKey__ KeyCode::PAGEUP, KeyCode::CURSOR_LEFT</autogen>
-			<autogen>__KeyToKey__ KeyCode::PAGEDOWN, KeyCode::CURSOR_RIGHT</autogen>
-			<autogen>__KeyToKey__ KeyCode::CURSOR_LEFT, KeyCode::PAGEUP</autogen>
-			<autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::PAGEDOWN</autogen>
-			
-			<autogen>__KeyToKey__ KeyCode::HELP, KeyCode::SLASH, ModifierFlag::COMMAND_L || ModifierFlag::SHIFT_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::BACKQUOTE,      KeyCode::FN</autogen>
+				<autogen>__KeyToKey__ KeyCode::ESCAPE,         KeyCode::CAPSLOCK</autogen>
+				<autogen>__KeyToKey__ KeyCode::PAGEUP,         KeyCode::CURSOR_LEFT</autogen>
+				<autogen>__KeyToKey__ KeyCode::PAGEDOWN,       KeyCode::CURSOR_RIGHT</autogen>
+				<autogen>__KeyToKey__ KeyCode::CURSOR_LEFT,    KeyCode::PAGEDOWN</autogen>
+				<autogen>__KeyToKey__ KeyCode::END,            KeyCode::PAGEUP</autogen>
+				<!-- <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT,   KeyCode::END</autogen> -->
+				
+				<autogen>__KeyToKey__ KeyCode::HELP,           KeyCode::SLASH, ModifierFlag::COMMAND_L || ModifierFlag::SHIFT_L</autogen>
 
-			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::ESCAPE</autogen>
+				<autogen>__KeyToKey__ KeyCode::F19,            KeyCode::ESCAPE</autogen>
+			</item>
+			<item>
+				<name>Better END and HOME support</name>
+				<identifier>ben.maltron.home.end</identifier>
+				<appendix>END to Ctrl_L+E</appendix>
+				<appendix>HOME to Ctrl_L+A</appendix>
+				<not>VIRTUALBOX</not>
+				
+				<autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT,  KeyCode::E, ModifierFlag::CONTROL_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::HOME,          KeyCode::A, ModifierFlag::CONTROL_L</autogen>
+				
+			</item>
 		</item>
 		<item>
 			<name>Maltron not Windows</name>
 			<identifier>ben.maltron.not.windows.modifier</identifier>
 			<not>VIRTUALBOX, RDC</not>
 			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
+			
 			<autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::CONTROL_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::OPTION_L,  KeyCode::COMMAND_L</autogen>
 		</item>
 		<item>
 			<name>Maltron Windows</name>
@@ -71,25 +90,25 @@
 			<only>VIRTUALBOX, RDC</only>
 			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 			<autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::COMMAND_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::CONTROL_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::OPTION_L,  KeyCode::CONTROL_L</autogen>
 		</item>
 		<item>
 			<name>Maltron's macros</name>
 			<identifier>ben.maltron.macros</identifier>
 			<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 			<appendix>Macros for the Maltron keyboard</appendix>
-			<autogen>__KeyToKey__ KeyCode::KEYPAD_1, KeyCode::K, ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::KEYPAD_2, KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::KEYPAD_3, KeyCode::L, ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::KEYPAD_4, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::KEYPAD_5, KeyCode::F, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::KEYPAD_6, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::KEYPAD_7, KeyCode::I, ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::KEYPAD_8, KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::KEYPAD_9, KeyCode::O, ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::KEYPAD_0, KeyCode::P, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::KEYPAD_DOT, KeyCode::C, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
-			<autogen>__KeyToKey__ KeyCode::ENTER, KeyCode::N, ModifierFlag::COMMAND_L || ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_1,   KeyCode::K,            ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_2,   KeyCode::CURSOR_DOWN,  ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L || ModifierFlag::CONTROL_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_3,   KeyCode::L,            ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_4,   KeyCode::CURSOR_LEFT,  ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L || ModifierFlag::CONTROL_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_5,   KeyCode::F,            ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L || ModifierFlag::CONTROL_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_6,   KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L || ModifierFlag::CONTROL_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_7,   KeyCode::I,            ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_8,   KeyCode::CURSOR_UP,    ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L || ModifierFlag::CONTROL_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_9,   KeyCode::O,            ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_0,   KeyCode::P,            ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L || ModifierFlag::CONTROL_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::KEYPAD_DOT, KeyCode::C,            ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L || ModifierFlag::CONTROL_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::ENTER,      KeyCode::N,            ModifierFlag::COMMAND_L || ModifierFlag::OPTION_L || ModifierFlag::CONTROL_L</autogen>
 		</item>
 		<item>
 			<name>Alfred's Google Control Compatibility</name>
@@ -160,11 +179,11 @@
 				<name>Tarmak 4 - J>Y>O>;>P</name>
 				<identifier>ben.colemak.tarmak4</identifier>
 				<inputsource_only>US_LAYOUT</inputsource_only>
-				<autogen>__KeyToKey__ KeyCode::Y, KeyCode::J</autogen>
-				<autogen>__KeyToKey__ KeyCode::O, KeyCode::Y</autogen>
+				<autogen>__KeyToKey__ KeyCode::Y,         KeyCode::J</autogen>
+				<autogen>__KeyToKey__ KeyCode::O,         KeyCode::Y</autogen>
 				<autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::O</autogen>
-				<autogen>__KeyToKey__ KeyCode::P, KeyCode::SEMICOLON</autogen>
-				<autogen>__KeyToKey__ KeyCode::R, KeyCode::P</autogen>
+				<autogen>__KeyToKey__ KeyCode::P,         KeyCode::SEMICOLON</autogen>
+				<autogen>__KeyToKey__ KeyCode::R,         KeyCode::P</autogen>
 			</item>
 			<item>
 				<name>Tarmak 5 - LUI loop</name>
@@ -183,7 +202,7 @@
 				<appendix>HOME to Ctrl_L+A</appendix> -->
 				<identifier>ben.alfred.begin.end</identifier>
 				<not>VIRTUALBOX</not>
-				<autogen>__KeyToKey__ KeyCode::END, KeyCode::E, ModifierFlag::CONTROL_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::END,  KeyCode::E, ModifierFlag::CONTROL_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::HOME, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
 			</item>
 			
@@ -205,10 +224,10 @@
 				<identifier vk_config="true">notsave.ben_mousekeys_mode</identifier>
 				<autogen>__ShowStatusMessage__ Mouse Keys</autogen>
 				<!-- scroll wheel mode -->
-				<autogen>__KeyToKey__ {{VI_J}},               ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_LEFT,  ModifierFlag::FN</autogen>
-				<autogen>__KeyToKey__ {{VI_K}},               ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_DOWN,  ModifierFlag::FN</autogen>
-				<autogen>__KeyToKey__ {{VI_I}},             ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_UP,    ModifierFlag::FN</autogen>
-				<autogen>__KeyToKey__ {{VI_L}},               ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_RIGHT, ModifierFlag::FN</autogen>
+				<autogen>__KeyToKey__ {{VI_J}},              ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_LEFT,  ModifierFlag::FN</autogen>
+				<autogen>__KeyToKey__ {{VI_K}},              ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_DOWN,  ModifierFlag::FN</autogen>
+				<autogen>__KeyToKey__ {{VI_I}},              ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_UP,    ModifierFlag::FN</autogen>
+				<autogen>__KeyToKey__ {{VI_L}},              ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_RIGHT, ModifierFlag::FN</autogen>
 				<autogen>__KeyToKey__ KeyCode::CURSOR_UP,    ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_UP,    ModifierFlag::FN</autogen>
 				<autogen>__KeyToKey__ KeyCode::CURSOR_DOWN,  ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_DOWN,  ModifierFlag::FN</autogen>
 				<autogen>__KeyToKey__ KeyCode::CURSOR_LEFT,  ModifierFlag::FN, KeyCode::VK_MOUSEKEY_SCROLL_LEFT,  ModifierFlag::FN</autogen>
