@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
 <root>
+	<modifierdef>MY_HYPER</modifierdef>
+	
 	<appdef>
 		<appname>VIRTUALBOX</appname>
 		<equal>org.virtualbox.app.VirtualBoxVM</equal>
+	</appdef>
+	<appdef>
+		<appname>EMACS</appname>
+		<equal>org.gnu.Emacs</equal>
 	</appdef>
 	<appdef>
 		<appname>RDC</appname>
@@ -41,6 +47,27 @@
 	<item>
 		<name>Ben's settings</name>
 		<item>
+			<name>Arrows (Colemak)</name>
+			<identifier>ben.arrows</identifier>
+			<appendix>See ... to turn on the MY_HYPER modifier</appendix>
+			
+			<autogen>__KeyToKey__ KeyCode::I, ModifierFlag::MY_HYPER, KeyCode::CURSOR_UP</autogen>
+			<autogen>__KeyToKey__ KeyCode::K, ModifierFlag::MY_HYPER, KeyCode::CURSOR_DOWN</autogen>
+			<autogen>__KeyToKey__ KeyCode::J, ModifierFlag::MY_HYPER, KeyCode::CURSOR_LEFT</autogen>
+			<autogen>__KeyToKey__ KeyCode::L, ModifierFlag::MY_HYPER, KeyCode::CURSOR_RIGHT</autogen>
+			<autogen>__KeyToKey__ KeyCode::E, ModifierFlag::MY_HYPER, KeyCode::CURSOR_UP</autogen>
+			<autogen>__KeyToKey__ KeyCode::D, ModifierFlag::MY_HYPER, KeyCode::CURSOR_DOWN</autogen>
+			<autogen>__KeyToKey__ KeyCode::S, ModifierFlag::MY_HYPER, KeyCode::CURSOR_LEFT</autogen>
+			<autogen>__KeyToKey__ KeyCode::F, ModifierFlag::MY_HYPER, KeyCode::CURSOR_RIGHT</autogen>
+			<!-- <autogen>__KeyToKey__ KeyCode::I, ModifierFlag::MY_HYPER, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::CURSOR_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT</autogen>
+			<autogen>__KeyToKey__ KeyCode::K, ModifierFlag::MY_HYPER, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::CURSOR_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT</autogen>
+			<autogen>__KeyToKey__ KeyCode::J, ModifierFlag::MY_HYPER, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::CURSOR_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT</autogen>
+			<autogen>__KeyToKey__ KeyCode::L, ModifierFlag::MY_HYPER, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT</autogen> -->
+
+			<!-- SSH SUPPORT -->
+			<autogen>__KeyToKey__ KeyCode::Q, ModifierFlag::MY_HYPER, KeyCode::ESCAPE, KeyCode::Q</autogen>
+		</item>
+		<item>
 			<name>M570 button configuration</name>
 			<item>
 				<name>Setup</name>
@@ -60,22 +87,47 @@
 			<name>Capslock fine tunning</name>
 			<device_not>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_not>
 			<device_not>DeviceVendor::ME, DeviceProduct::MY_KEYBOARD</device_not>
+			<not>EMACS</not>
 			<appendix>Maps capslock to ctrl_r except on Maltron</appendix>
 			<identifier>ben.capslock</identifier>
 
 			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::CONTROL_R</autogen>
 		</item>
 		<item>
-			<name>Capslock fine tunning</name>
-			<device>DeviceVendor::ME, DeviceProduct::MY_KEYBOARD</device>
-			<appendix>Maps F19 to capslock on my keyboard</appendix>
-			<identifier>ben.my.capslock</identifier>
+			<name>Capslock fine tunning (EMACS)</name>
+			<device_not>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_not>
+			<device_not>DeviceVendor::ME, DeviceProduct::MY_KEYBOARD</device_not>
+			<only>EMACS</only>
+			<appendix>Maps capslock to ctrl_r except on Maltron</appendix>
+			<identifier>ben.capslock.emacs</identifier>
 
-			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::CAPSLOCK</autogen>
+			<autogen>__KeyToKey__ KeyCode::F19, KeyCode::CONTROL_L</autogen>
+		</item>
+		<item>
+			<name>Alfred's Google Control Compatibility</name>
+			<identifier>ben.alfred.compatibility</identifier>
+			<appendix>MUSIC_PREV to Cmd_L+Opt_L+Ctrl_L+F7</appendix>
+			<appendix>MUSIC_PLAY to Cmd_L+Opt_L+Ctrl_L+F8</appendix>
+			<appendix>MUSIC_NEXT to Cmd_L+Opt_L+Ctrl_L+F9</appendix>
+			<autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PREV, KeyCode::F7, ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L || ModifierFlag::COMMAND_L</autogen>
+			<autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PLAY, KeyCode::F8, ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L || ModifierFlag::COMMAND_L</autogen>
+			<autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_NEXT, KeyCode::F9, ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L || ModifierFlag::COMMAND_L</autogen>
 		</item>
 		<item>
 			<name>Maltron</name>
 			<appendix>Switch keys on Maltron keyboard only</appendix>
+			<item>
+				<name>Capslock fine tunning</name>
+				<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
+				<appendix>Maps F19 to escape on my MALTRON keyboard</appendix>
+				<identifier>ben.maltron.capslock</identifier>
+				<autogen>
+					__KeyOverlaidModifier__
+					KeyCode::F19,
+					KeyCode::VK_MODIFIER_MY_HYPER,
+					KeyCode::ESCAPE
+				</autogen>
+			</item>
 			<item>
 				<name>Fix Layout</name>
 				<appendix>Switch keys on Maltron keyboard only</appendix>
@@ -98,8 +150,6 @@
 				<!-- <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT,   KeyCode::END</autogen> -->
 
 				<autogen>__KeyToKey__ KeyCode::HELP,           KeyCode::SLASH, ModifierFlag::COMMAND_L || ModifierFlag::SHIFT_L</autogen>
-
-				<autogen>__KeyToKey__ KeyCode::F19,            KeyCode::ESCAPE</autogen>
 			</item>
 			<item>
 				<name>Maltron's macros</name>
@@ -177,21 +227,23 @@
 				<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 				<inputsource_only>COLEMAK</inputsource_only>
 				<identifier>ben.maltron.home.end.colemak</identifier>
-				<not>VIRTUALBOX</not>
+				<not>VIRTUALBOX, EMACS</not>
 
 				<autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT,  KeyCode::K, ModifierFlag::CONTROL_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::HOME,          KeyCode::A, ModifierFlag::CONTROL_L</autogen>
 			</item>
-		</item>
-		<item>
-			<name>Alfred's Google Control Compatibility</name>
-			<identifier>ben.alfred.compatibility</identifier>
-			<appendix>MUSIC_PREV to Cmd_L+Opt_L+Ctrl_L+F7</appendix>
-			<appendix>MUSIC_PLAY to Cmd_L+Opt_L+Ctrl_L+F8</appendix>
-			<appendix>MUSIC_NEXT to Cmd_L+Opt_L+Ctrl_L+F9</appendix>
-			<autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PREV, KeyCode::F7, ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L || ModifierFlag::COMMAND_L</autogen>
-			<autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PLAY, KeyCode::F8, ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L || ModifierFlag::COMMAND_L</autogen>
-			<autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_NEXT, KeyCode::F9, ModifierFlag::CONTROL_L || ModifierFlag::OPTION_L || ModifierFlag::COMMAND_L</autogen>
+			<item>
+				<name>Better END and HOME support (Colemak emacs)</name>
+				
+				<appendix>END to Ctrl_L+E</appendix>
+				<appendix>HOME to Ctrl_L+A</appendix>
+				<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
+				<inputsource_only>COLEMAK</inputsource_only>
+				<identifier>ben.maltron.home.end.colemak.emacs</identifier>
+				<only>EMACS</not>
+
+				<autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT,  KeyCode::END</autogen>
+			</item>
 		</item>
 		<item>
 			<name>Windows</name>
@@ -269,6 +321,14 @@
 		</item>
 		<item>
 			<name>Ergotron Keyboard</name>
+			<item>
+				<name>Capslock fine tunning</name>
+				<device_only>DeviceVendor::ME, DeviceProduct::MY_KEYBOARD</device_only>
+				<appendix>Maps F19 to capslock on my keyboard</appendix>
+				<identifier>ben.my.capslock</identifier>
+
+				<autogen>__KeyToKey__ KeyCode::F19, KeyCode::CAPSLOCK</autogen>
+			</item>
 			<item>
 				<name>Numpad's macros</name>
 				<identifier>ben.ergotron.macros.qwerty</identifier>
@@ -402,7 +462,7 @@
 				<appendix>// Strict Simultaneous Key Order. You need to press D key before S key.</appendix>
 				<appendix></appendix>
 				<appendix>+ F turns on "Scroll Wheel Mode"</appendix>
-				<appendix>// F+IJKL to scroll wheel</appendix>
+				<appendix>// F+IJKL to scroll wheel</appendix>\
 				<appendix></appendix>
 				<appendix>+ A turns on "High Speed Mode"</appendix>
 				<appendix>// A+IJKL to high-speed movement</appendix>
