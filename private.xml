@@ -14,6 +14,10 @@
 		<appname>RDC</appname>
 		<equal>com.microsoft.rdc.mac</equal>
 	</appdef>
+	<appdef>
+		<appname>PARALLEL_DESKTOP</appname>
+		<equal>com.parallels.desktop.console</equal>
+	</appdef>
 	<replacementdef>
 		<replacementname>VI_I</replacementname>
 		<replacementvalue>KeyCode::I</replacementvalue>
@@ -192,7 +196,7 @@
 			<item>
 				<name>Maltron not Windows</name>
 				<identifier>ben.maltron.not.windows.modifier</identifier>
-				<not>VIRTUALBOX, RDC</not>
+				<not>VIRTUALBOX, RDC, PARALLEL_DESKTOP</not>
 				<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 
 				<autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::CONTROL_L</autogen>
@@ -201,7 +205,7 @@
 			<item>
 				<name>Maltron Windows</name>
 				<identifier>ben.maltron.windows.modifier</identifier>
-				<only>VIRTUALBOX, RDC</only>
+				<only>VIRTUALBOX, RDC, PARALLEL_DESKTOP</only>
 				<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 				<autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::COMMAND_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::OPTION_L,  KeyCode::CONTROL_L</autogen>
@@ -214,7 +218,7 @@
 				<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 				<inputsource_only>US_LAYOUT</inputsource_only>
 				<identifier>ben.maltron.home.end.qwerty</identifier>
-				<not>VIRTUALBOX</not>
+				<not>VIRTUALBOX, PARALLEL_DESKTOP</not>
 
 				<autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT,  KeyCode::E, ModifierFlag::CONTROL_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::HOME,          KeyCode::A, ModifierFlag::CONTROL_L</autogen>
@@ -227,7 +231,7 @@
 				<device_only>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_only>
 				<inputsource_only>COLEMAK</inputsource_only>
 				<identifier>ben.maltron.home.end.colemak</identifier>
-				<not>VIRTUALBOX, EMACS</not>
+				<not>VIRTUALBOX, EMACS, PARALLEL_DESKTOP</not>
 
 				<autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT,  KeyCode::K, ModifierFlag::CONTROL_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::HOME,          KeyCode::A, ModifierFlag::CONTROL_L</autogen>
@@ -250,7 +254,7 @@
 			<item>
 				<name>Switch CTRL and CMD</name>
 				<identifier>ben.windows.modifier</identifier>
-				<only>VIRTUALBOX</only>
+				<only>VIRTUALBOX, PARALLEL_DESKTOP</only>
 				<device_not>DeviceVendor::MALTRON, DeviceProduct::MALTRON_KEYBOARD</device_not>
 				<autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
@@ -322,12 +326,32 @@
 		<item>
 			<name>Ergotron Keyboard</name>
 			<item>
+				<name>Music support</name>
+				<device_only>DeviceVendor::ME, DeviceProduct::MY_KEYBOARD</device_only>
+				<appendix>Support for prev, play, next</appendix>
+				<identifier>ben.my.music</identifier>
+				<autogen>__KeyToKey__ KeyCode::KEYPAD_SLASH,    KeyCode::F7, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::CONTROL_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::KEYPAD_MULTIPLY, KeyCode::F8, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::CONTROL_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::KEYPAD_MINUS,    KeyCode::F9, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::CONTROL_L</autogen>
+			</item>
+			<item>
 				<name>Capslock fine tunning</name>
 				<device_only>DeviceVendor::ME, DeviceProduct::MY_KEYBOARD</device_only>
 				<appendix>Maps F19 to capslock on my keyboard</appendix>
 				<identifier>ben.my.capslock</identifier>
-
 				<autogen>__KeyToKey__ KeyCode::F19, KeyCode::CAPSLOCK</autogen>
+			</item>
+			<item>
+				<name>MY HYPER</name>
+				<device_only>DeviceVendor::ME, DeviceProduct::MY_KEYBOARD</device_only>
+				<appendix>Use long press on escape for MY HYPER</appendix>
+				<identifier>ben.my.hyper</identifier>
+				<autogen>
+					__KeyOverlaidModifier__
+					KeyCode::ESCAPE,
+					KeyCode::VK_MODIFIER_MY_HYPER,
+					KeyCode::ESCAPE
+				</autogen>
 			</item>
 			<item>
 				<name>Numpad's macros</name>
@@ -375,7 +399,7 @@
 				<device_only>DeviceVendor::ME, DeviceProduct::MY_KEYBOARD</device_only>
 				<inputsource_only>US_LAYOUT</inputsource_only>
 				<identifier>ben.ergotron.home.end.qwerty</identifier>
-				<not>VIRTUALBOX</not>
+				<not>VIRTUALBOX, PARALLEL_DESKTOP</not>
 
 				<autogen>__KeyToKey__ KeyCode::END,  KeyCode::E, ModifierFlag::CONTROL_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::HOME, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
@@ -388,7 +412,7 @@
 				<device_only>DeviceVendor::ME, DeviceProduct::MY_KEYBOARD</device_only>
 				<inputsource_only>COLEMAK</inputsource_only>
 				<identifier>ben.ergotron.home.end.colemak</identifier>
-				<not>VIRTUALBOX</not>
+				<not>VIRTUALBOX, PARALLEL_DESKTOP</not>
 
 				<autogen>__KeyToKey__ KeyCode::END,  KeyCode::K, ModifierFlag::CONTROL_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::HOME, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
@@ -401,7 +425,7 @@
 				<!-- <appendix>END to Ctrl_L+E</appendix>
 				<appendix>HOME to Ctrl_L+A</appendix> -->
 				<identifier>ben.alfred.begin.end</identifier>
-				<not>VIRTUALBOX</not>
+				<not>VIRTUALBOX, PARALLEL_DESKTOP</not>
 				<autogen>__KeyToKey__ KeyCode::END,  KeyCode::E, ModifierFlag::CONTROL_L</autogen>
 				<autogen>__KeyToKey__ KeyCode::HOME, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
 			</item>
