@@ -80,6 +80,12 @@
 				<autogen>__KeyToKey__ KeyCode::KEYPAD_PLUS,  KeyCode::F17</autogen>
 			</item>
 			<item>
+				<name>MTE</name>
+				<identifier>ben.mte.buttons</identifier>
+				<autogen>__KeyToKey__ PointingButton::BUTTON4, KeyCode::BRACKET_LEFT,  ModifierFlag::COMMAND_L</autogen>
+				<autogen>__KeyToKey__ PointingButton::BUTTON5, KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L</autogen>
+			</item>
+			<item>
 				<name>Back and Forward buttons</name>
 				<identifier>ben.m570.buttons</identifier>
 				<autogen>__KeyToKey__ KeyCode::F16, KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L</autogen>
@@ -154,6 +160,7 @@
 				<!-- <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT,   KeyCode::END</autogen> -->
 
 				<autogen>__KeyToKey__ KeyCode::HELP,           KeyCode::SLASH, ModifierFlag::COMMAND_L || ModifierFlag::SHIFT_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::KEYPAD_CLEAR,   KeyCode::FN</autogen>
 			</item>
 			<item>
 				<name>Maltron's macros</name>
